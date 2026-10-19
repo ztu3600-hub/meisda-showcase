@@ -1,0 +1,75 @@
+/* Brand content layer. Template grid, breakpoint rules and Webflow IX2 IDs stay in place. */
+@font-face{font-family:"Meisda Sans";src:url("/meisda-showcase/meisda/fonts/SourceHanSansCN-VF.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+body,input,button,select,textarea{font-family:"Meisda Sans","Microsoft YaHei",sans-serif}
+.nav-link,.button,.button-primary-solid,.product-name,.product-category-text,.breadcrumb-title,.footer-link,.section-text{font-family:"Meisda Sans","Microsoft YaHei",sans-serif}
+h1,h2,.hero-title,.section-title{font-family:"Meisda Sans","Microsoft YaHei",sans-serif;font-weight:650;letter-spacing:-.025em;word-break:normal;overflow-wrap:anywhere}
+.product-image{object-fit:contain;background:#fff}
+.product-image-hover{object-fit:cover;object-position:center;background:#fff}
+.product-image-hover[data-scene-kind="official-enhanced"]{object-fit:contain}
+.product-thumbnail-block,.product-image-block{background:#fff}
+.product-main-lightbox-link img{object-fit:contain;background:#fff}
+.section-content .content-image-block{display:flex;flex-direction:column;align-items:center;width:100%;gap:30px}
+.section-content .content-image-block .image-block{width:100%;height:clamp(520px,41vw,710px);overflow:visible}
+.section-content img[src$="sc21b-cutout.png"]{object-fit:contain;max-height:none;height:100%;width:100%}
+.section-content .content-image-block>a.button{align-self:center;margin:0}
+.meisda-reveal{filter:blur(10px);transform:scale(1.1);transition:filter 1500ms ease,transform 1500ms ease;will-change:filter,transform}
+.meisda-reveal.is-visible{filter:blur(0);transform:scale(1)}
+.section-feature-product img[src$="sc190b-cutout.png"]{object-fit:contain;max-height:620px;width:100%}
+.brand img,.footer-brand img{width:116px;height:auto;object-fit:contain}
+.client-logo img{object-fit:contain}
+.product-price-regular,.product-details-price-regular,.product-price-compare,.product-old-price,.product-price-old,.product-compare-price{display:none!important}
+.meisda-stat{display:block;font:inherit;line-height:1.2}
+
+
+.meisda-source-note{font-size:13px;line-height:1.6;opacity:.7}
+.section-header .w-commerce-commercecartordervalue{font-size:17px}
+.meisda-selection-summary{width:100%;min-height:100px;padding:16px;border:1px solid currentColor;background:transparent;font:inherit;color:inherit;resize:vertical;border-radius:6px}
+@media(max-width:767px){h1,h2,.hero-title,.section-title{line-height:1.24}.brand img{width:100px}.section-content img[src$="sc21b-cutout.png"]{max-height:430px}.section-feature-product img[src$="sc190b-cutout.png"]{max-height:480px}}
+
+.hero-description{max-width:900px;margin-left:auto;margin-right:auto}
+
+
+/* Match native a-10/a-11 timing: 1000ms scene fade/scale, 500ms main and button. */
+.product-image{opacity:1!important;transition:opacity 500ms ease}
+.product-image-hover{opacity:0!important;transform:scale(1.1)!important;transition:opacity 1000ms ease,transform 1000ms ease}
+.product-single-block:is(:hover,:focus-within) .product-image-hover{opacity:1!important;transform:scale(1)!important}
+.product-single-block:is(:hover,:focus-within) .product-image{opacity:0!important}
+.product-item-add-to-cart{transform:translateY(100%)!important;transition:transform 500ms ease}
+.product-single-block:is(:hover,:focus-within) .product-item-add-to-cart{transform:translateY(-50px)!important}
+.cta-backgorund{background-image:url("/meisda-showcase/meisda/cta-cooler-wide.webp")!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+.cta-backgorund .backgound-overlay{background:linear-gradient(90deg,rgba(4,30,37,.12),rgba(4,30,37,.5) 42%,rgba(4,30,37,.5) 58%,rgba(4,30,37,.12))}
+.section-cta .max-width-750{max-width:850px}
+.section-cta .section-title{font-size:clamp(30px,3.6vw,58px);font-weight:600}
+.section-category img[src*="category-cutout-"]{object-fit:contain;background:transparent}
+.client-logo-image,.client-logo img{object-fit:contain;background:transparent}
+.social-link-image,.social-link-image-hover{width:20px;height:20px;object-fit:contain}
+.meisda-icon-light{filter:brightness(0) invert(1)}
+.content-avatar-list .conter-avatar-item-block{width:44px;height:56px}
+.conter-image-avatar{object-fit:cover;object-position:50% 55%;width:100%;height:100%;image-rendering:auto}
+@media(max-width:991px){.section-content .content-image-block{width:100%;max-width:650px;margin:0 auto}.section-content .content-image-block .image-block{height:610px}}
+@media(max-width:767px){.section-content .content-image-block{gap:20px}.section-content .content-image-block .image-block{height:440px}.section-content img[src$="sc21b-cutout.png"]{max-height:none}.cta-backgorund{background-position:25% center!important}.section-cta .section-title{font-size:32px}.content-avatar-list .conter-avatar-item-block{width:40px;height:52px}}
+@media(prefers-reduced-motion:reduce){.meisda-reveal{filter:none;transform:none;transition:none}.product-image,.product-image-hover,.product-item-add-to-cart{transition:none}}
+
+.counter-number-wrapper,.counter-number,.meisda-stat{font-family:"Meisda Sans","Microsoft YaHei",sans-serif;font-weight:600}
+.hero-area>.section-text{max-width:920px;margin-left:auto;margin-right:auto;line-height:1.65}
+.cta-title-line{white-space:nowrap}
+@media(max-width:767px){.cta-title-line{display:block}}
+
+/* Crop-safe application scenes retain the template's native scrolling parallax. */
+.section-feature-product .featured-scene-picture{display:block;width:100%;height:100%}
+.section-feature-product .background-block{min-height:calc(100vw / 2.6)}
+.section-feature-product .parallax-image{display:block;width:100%;height:125%;object-fit:cover;object-position:50% 50%}
+@media(min-width:480px) and (max-width:991px){
+  .section-feature-product .video-product-block{max-width:48vw;gap:16px;padding:20px}
+}
+@media(min-width:480px) and (max-width:767px){
+  .section-feature-product .parallax-image{object-position:65% 50%}
+}
+@media(max-width:479px){
+  .section-feature-product .background-block{padding-top:500px;padding-bottom:30px}
+  .section-feature-product .video-product-block{grid-template-columns:1.2fr 1fr;gap:14px;padding:18px;max-width:100%}
+  .section-feature-product .video-product-image-block{height:170px;padding:12px}
+  .section-feature-product .feature-product-content-block{margin-bottom:16px}
+  .section-feature-product .button-primary-solid{width:100%;font-size:14px;padding:14px 12px}
+  .section-feature-product .feature-product-tag{font-size:12px;padding:6px 12px}
+}
