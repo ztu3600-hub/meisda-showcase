@@ -4,7 +4,7 @@ function init(){
  const reveal=document.querySelectorAll('.meisda-reveal');
  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>target.classList.toggle('is-visible',isIntersecting)),{threshold:.2});reveal.forEach(el=>observer.observe(el));}else reveal.forEach(el=>el.classList.add('is-visible'));
  document.querySelectorAll('input[type="submit"]').forEach(e=>{const v=e.value.trim();if(/Subscribe|Send|Submit|Sign up/i.test(v))e.value='提交需求'});
- document.querySelectorAll('input[placeholder]').forEach(e=>{if(/mail/i.test(e.placeholder))e.placeholder='联系邮箱';else if(/meisda-showcase/search/i.test(e.placeholder))e.placeholder='搜索型号或产品';else if(/name/i.test(e.placeholder))e.placeholder='您的姓名';else if(/phone/i.test(e.placeholder))e.placeholder='联系电话'});
+ document.querySelectorAll('input[placeholder]').forEach(e=>{if(/mail/i.test(e.placeholder))e.placeholder='联系邮箱';else if(/search/i.test(e.placeholder))e.placeholder='搜索型号或产品';else if(/name/i.test(e.placeholder))e.placeholder='您的姓名';else if(/phone/i.test(e.placeholder))e.placeholder='联系电话'});
  document.querySelectorAll('textarea[placeholder]').forEach(e=>e.placeholder='请填写型号、数量、应用场景与定制需求');
  // Product cards remain real links. The basket carries inquiry selections, never invented prices.
  document.querySelectorAll('.w-commerce-commercecartcheckoutlink,.w-commerce-commercecartcheckoutbutton').forEach(a=>{a.href='/meisda-showcase/contact?selection=1';a.textContent='咨询选型方案'});
