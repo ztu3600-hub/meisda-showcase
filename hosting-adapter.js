@@ -1,8 +1,9 @@
 (()=>{
 const base="/meisda-showcase", native=window.fetch.bind(window);
+Object.defineProperty(window,'__showcasePath',{get:()=>location.pathname===base+'/'?location.pathname:location.pathname.replace(/\/$/,'')});
 const rooted=x=>typeof x==='string'&&x.startsWith('/')&&!x.startsWith('//')&&!x.startsWith(base+'/')?base+x:x;
 window.fetch=async(input,init)=>{
- let raw=typeof input==='string'?rooted(input):input;
+ let raw=typeof input==='string'?rooted(input):input instanceof URL?input.href:input;
  const u=new URL(typeof raw==='string'?raw:raw.url,location.href);
  const path=u.pathname.startsWith(base+'/')?u.pathname.slice(base.length):u.pathname;
  if(u.origin===location.origin){

@@ -8,12 +8,12 @@ function init(){
  document.querySelectorAll('textarea[placeholder]').forEach(e=>e.placeholder='请填写型号、数量、应用场景与定制需求');
  // Product cards remain real links. The basket carries inquiry selections, never invented prices.
  document.querySelectorAll('.w-commerce-commercecartcheckoutlink,.w-commerce-commercecartcheckoutbutton').forEach(a=>{a.href='/meisda-showcase/contact?selection=1';a.textContent='咨询选型方案'});
- if(location.pathname==='/meisda-showcase/contact'&&new URLSearchParams(location.search).has('selection')){
+ if(window.__showcasePath==='/meisda-showcase/contact'&&new URLSearchParams(location.search).has('selection')){
   let selected=[];try{selected=JSON.parse(localStorage.getItem('meisda-selection-v1')||'[]')}catch{}
   const message=document.querySelector('textarea');if(message&&selected.length)message.value='产品选型需求：\n'+selected.map(p=>p.name+' × '+p.quantity).join('\n')+'\n\n应用场景：\n定制要求：';
  }
  // The two archived commerce utility paths now lead to the inquiry page.
- if(['/meisda-showcase/checkout','/meisda-showcase/order-confirmation'].includes(location.pathname))location.replace('/meisda-showcase/contact?selection=1');
+ if(['/meisda-showcase/checkout','/meisda-showcase/order-confirmation'].includes(window.__showcasePath))location.replace('/meisda-showcase/contact?selection=1');
 }
 document.readyState==='loading'?document.addEventListener('DOMContentLoaded',init):init();
 })();
